@@ -1,0 +1,146 @@
+<?php
+session_start();
+
+// Check if the user is logged in
+if (!isset($_SESSION['user_id']) || !isset($_SESSION['user_name'])) {
+    header("Location: login.php?error=Please login to access the dashboard.");
+    exit;
+}
+
+// Fetch user details
+$user_name = htmlspecialchars($_SESSION['user_name']);
+
+// (Optional) Database connection if you need to fetch additional user data
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>Menu</h2>
+            <nav>
+                <ul>
+                    <li><a href="dashboard.php">Dashboard</a></li>
+                    <li><a href="events.html">Explore Events</a></li>
+                    <li><a href="my_events.html">My Events</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="logout.php">Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <h1>Welcome back, <?php echo $user_name; ?>!</h1>
+                <p>Discover your dashboard insights below.</p>
+            </header>
+
+            <!-- Dashboard Cards -->
+            <section class="dashboard-cards">
+                <div class="card">
+                    <h3>Upcoming Events</h3>
+                    <p>Check out the events you've registered for.</p>
+                    <a href="my_events.html">View Events</a>
+                </div>
+                <div class="card">
+                    <h3>Create an Event</h3>
+                    <p>Host a new event for the community.</p>
+                    <a href="create_event.html">Create Now</a>
+                </div>
+                <div class="card">
+                    <h3>Manage Profile</h3>
+                    <p>Update your personal details and preferences.</p>
+                    <a href="profile.html">Edit Profile</a>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <style>
+        /* Styles for Dashboard */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .dashboard {
+            display: flex;
+            width: 100%;
+        }
+
+        .sidebar {
+            width: 20%;
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
+        }
+
+        .sidebar h2 {
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin: 10px 0;
+        }
+
+        .sidebar ul li a {
+            color: #ecf0f1;
+            text-decoration: none;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .header {
+            background: #3498db;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .dashboard-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .card a {
+            display: inline-block;
+            margin-top: 10px;
+            color: #3498db;
+            text-decoration: none;
+        }
+    </style>
+</body>
+
+</html>

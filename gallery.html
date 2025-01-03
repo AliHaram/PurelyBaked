@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="en" class="u-responsive-sm">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery</title>
+  
+  <!-- Inline CSS mimicking the "Nicepage" style classes you showed -->
+  <style>
+    /* General Reset/Basic */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: "Roboto", sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #fff;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Header */
+    .u-header {
+      background-color: #ffffff;
+      border-bottom: 1px solid #e1e1e1;
+      padding: 10px 0;
+    }
+    .u-sheet-1 {
+      width: 90%;
+      margin: 0 auto;
+      max-width: 1200px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .u-logo-image {
+      max-height: 40px;
+    }
+
+    /* Navigation Menu */
+    .u-menu {
+      display: flex;
+      align-items: center;
+    }
+    .u-menu ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    .u-menu li {
+      position: relative;
+    }
+    .u-menu li a {
+      color: #333;
+      font-weight: 500;
+      padding: 5px 10px;
+      transition: color 0.3s ease;
+    }
+    .u-menu li a:hover {
+      color: #478ac9; /* hover color */
+    }
+    .active {
+      color: #478ac9; /* indicate active page */
+      font-weight: 700;
+    }
+
+    /* Section (Gallery) */
+    .u-section-1 {
+      padding: 40px 0;
+    }
+    .u-sheet {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Gallery Heading */
+    .u-text-1 {
+      font-family: "Playfair Display", serif;
+      color: #478ac9;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    /* Gallery Grid */
+    .u-layout-wrap {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    /* Gallery Cell (using background-image) */
+    .u-image {
+      position: relative;
+      width: 100%;
+      padding-bottom: 60%; /* keeps a roughly rectangular shape */
+      background-color: #f3f3f3; /* fallback background */
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    /* Footer */
+    .u-footer {
+      background-color: #f0f0f0;
+      padding: 15px 0;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    /* Responsive if needed */
+    @media (max-width: 768px) {
+      .u-header, .u-sheet-1 {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .u-menu ul {
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+    }
+    header {
+            background-color: #0056b3;
+            color: #fff;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header {
+            background-color: #0056b3;
+            color: #fff;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 2rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
+
+        .u-section-bakery .u-layout-wrap .u-image {
+    position: relative;
+    width: 100%;
+    padding-bottom: 60%; /* Maintains aspect ratio */
+    background-color: #f3f3f3; /* Fallback background */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.u-section-bakery .u-layout-wrap .u-image:hover {
+    transform: scale(1.1); /* Expands the image */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds shadow on hover */
+}
+
+        
+        
+        .u-layout-wrap .u-image {
+    position: relative;
+    width: 100%;
+    padding-bottom: 60%; /* Keeps the aspect ratio */
+    background-color: #f3f3f3; /* Fallback color */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.u-layout-wrap .u-image:hover {
+    transform: scale(1.1); /* Expands the image */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+}
+
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background-color: #0056b3;
+            color: #fff;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 2rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
+
+        main {
+            position: relative;
+        }
+
+        video {
+    width: 100%; /* Ensure it spans the full width */
+    max-height: 600px; /* Increase the height of the video */
+    object-fit: cover; /* Maintain aspect ratio while filling the container */
+}
+
+/* Content Overlay */
+.content-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    padding: 2rem 3rem; /* Increase padding for more prominence */
+    background: rgba(0, 0, 0, 0.6); /* Darker overlay for better contrast */
+    border-radius: 10px;
+}
+
+.content-overlay h1 {
+    font-size: 4rem; /* Larger font size for the heading */
+    font-weight: bold;
+    margin-bottom: 1.5rem; /* Add spacing */
+}
+
+.content-overlay p {
+    font-size: 1.5rem; /* Increase font size for readability */
+    line-height: 2rem; /* Adjust line height for better spacing */
+}
+
+        .cta-button {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: #ffcc00;
+            color: #0056b3;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #e6b800;
+        }
+
+        #about {
+            background-color: #f4f4f4;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        #about h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            color: #0056b3;
+        }
+
+        #about p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Transparent background */
+            color: #fff;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            z-index: 10; /* Ensure it appears over the video */
+        }
+
+        header .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 2rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
+
+        /* Video Section */
+        .video-container1 {
+            position: relative;
+            width: 100%;
+            height: 600px;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Gallery Text Section */
+        .gallery-section {
+            text-align: center;
+            padding: 3rem 2rem;
+            background-color: #f4f4f4;
+        }
+
+        .gallery-section h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            color: #0056b3;
+        }
+
+        .gallery-section p {
+            font-size: 1.2rem;
+            color: #555;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header div a:hover {
+            color: #ffcc00;
+        }
+
+
+        #competitor-event-video {
+    padding: 3rem 2rem;
+    background-color: #f9f9f9;
+    text-align: center;
+    border-top: 2px solid #0056b3;
+    margin-top: 2rem;
+}
+
+.video-container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+video {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.video-description {
+    margin-top: 1.5rem;
+}
+
+ h2 {
+    font-size: 2rem;
+    color: #0056b3;
+    margin-bottom: 1rem;
+    text-align: center;
+ }
+
+.video-description p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo"><a href = "WebProj.php"> Home </a></div>
+    </header>
+
+    <!-- Video Section -->
+    <div class="video-container1">
+        <video autoplay muted loop playsinline>
+            <source src="Gallery.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <h1>Our Gallery</h1>
+        <p>
+            Take a peek behind the scenes at our fresh, homemade bakes, each lovingly crafted with premium ingredients. 
+            From rolling dough to the final drizzle of icing, our gallery reveals the heart and soul of every Purely Baked creation—made just for you!
+        </p>
+    </section>
+
+    <!-- Add your content here -->
+
+  <!-- ========== BAKERY SHOWCASE SECTION ========== -->
+<section class="u-clearfix u-section-bakery" id="sec-bakery" style="padding: 40px 0;">
+    <div class="u-clearfix u-sheet" style="width: 90%; max-width: 1200px; margin: 0 auto;">
+      <h2 >
+         Bakery
+      </h2>
+      <p style="text-align: center; margin-bottom: 30px;">
+        <h3 style= "text-align: center;">Get a glimpse of where the magic happens!</h3   >
+      </p>
+      
+      <!-- 6 Pictures Grid: 2 rows, 3 columns each -->
+      <div class="u-layout-wrap" style="
+        display: grid; 
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+        gap: 20px;
+      ">
+        <div class="u-image" style="
+          position: relative; 
+          width: 100%; 
+          padding-bottom: 60%; 
+          background-image: url('zenagrey.jpg'); 
+          background-size: cover; 
+          background-position: center; 
+          border: 1px solid #ddd; 
+          border-radius: 5px;
+        "></div>
+        <div class="u-image" style="
+          position: relative; 
+          width: 100%; 
+          padding-bottom: 60%; 
+          background-image: url('invertedz.jpg'); 
+          background-size: cover; 
+          background-position: center; 
+          border: 1px solid #ddd; 
+          border-radius: 5px;
+        "></div>
+        <div class="u-image" style="
+          position: relative; 
+          width: 100%; 
+          padding-bottom: 60%; 
+          background-image: url('moregrey.jpg'); 
+          background-size: cover; 
+          background-position: center; 
+          border: 1px solid #ddd; 
+          border-radius: 5px;
+        "></div>
+        <div class="u-image" style="
+          position: relative; 
+          width: 100%; 
+          padding-bottom: 60%; 
+          background-image: url('inverted.jpg'); 
+          background-size: cover; 
+          background-position: center; 
+          border: 1px solid #ddd; 
+          border-radius: 5px;
+        "></div>
+      </div>
+    </div>
+  </section>
+  <!-- ========== END BAKERY SHOWCASE SECTION ========== -->
+  
+
+  <!-- ========== GALLERY SECTION ========== -->
+  <section class="u-clearfix u-section-1" id="carousel_gallery">
+    <div class="u-clearfix u-sheet">
+      <h2>Gallery</h2>
+      <p style="text-align: center; margin-bottom: 30px;">
+        <h3 style = "text-align: center;">Welcome to our photo gallery! Explore our collection below.</h3>
+      </p>
+
+      <!-- Gallery Grid (20 images as an example) -->
+      <div class="u-layout-wrap" >
+        <!-- Each .u-image is a cell; change background-image to your actual image paths -->
+        <div class="u-image" style="background-image: url('itsme.jpg');"></div>
+        <div class="u-image" style="background-image: url('grey.jpg');"></div>
+        <div class="u-image" style="background-image: url('mono.jpg');"></div>
+        <div class="u-image" style="background-image: url('1.jpg');"></div>
+        <div class="u-image" style="background-image: url('2.jpg');"></div>
+        <div class="u-image" style="background-image: url('3.jpg');"></div>
+        <div class="u-image" style="background-image: url('4.jpg');"></div>
+        <div class="u-image" style="background-image: url('5.jpg');"></div>
+        <div class="u-image" style="background-image: url('6.jpg');"></div>
+        <div class="u-image" style="background-image: url('7.jpg');"></div>
+        <div class="u-image" style="background-image: url('8.jpg');"></div>
+        <div class="u-image" style="background-image: url('9.jpg');"></div>
+        <div class="u-image" style="background-image: url('10.jpg');"></div>
+        <div class="u-image" style="background-image: url('12.jpg');"></div>
+        <div class="u-image" style="background-image: url('13.jpg');"></div>
+        <div class="u-image" style="background-image: url('14.jpg');"></div>
+        
+      </div>
+      <!-- End of Gallery Grid -->
+
+    </div>
+  </section>
+
+  <section id="competitor-event-video">
+    <div class="video-container">
+        <video controls>
+            <source src="competitorEvent.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="video-description">
+        <h2>Exploring Competitor's Event</h2>
+        <p>
+            Join us as we explore and evaluate the offerings at a recent competitor's event. Discover how their goods stack up against our delicious creations and what sets Purely Baked apart!
+        </p>
+    </div>
+</section>
+
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="u-align-center u-clearfix u-footer" id="sec-3c11">
+    <div class="u-sheet">
+      <p>&copy; Ali Haram 20220861 Zena Abu Rub . All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
