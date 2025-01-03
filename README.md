@@ -19,6 +19,7 @@ Purely Baked is designed as a user-friendly and visually captivating e-commerce 
 - **SORA**: For efficient resource optimization and management.
 - **Lottie**: Adding dynamic animations to create an engaging user experience.
 - **GIT**: Version control for streamlined project development.
+- **CAPCUT**: Audio Editing Tool.
 
 ### Languages and Frameworks
 - **HTML**: Crafting the structural foundation of the website.
