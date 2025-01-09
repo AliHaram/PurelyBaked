@@ -16,10 +16,10 @@ Purely Baked is designed as a user-friendly and visually captivating e-commerce 
 ## Tools and Technologies Used
 
 ### Tools
-- **SORA**: For efficient resource optimization and management.
-- **Lottie**: Adding dynamic animations to create an engaging user experience.
-- **GIT**: Version control for streamlined project development.
-- **CAPCUT**: Audio Editing Tool.
+- **SORA**: For efficient resource optimization and management. Sora was used in the headers of each page visited, they are the videos you see in the background! 
+- **Lottie**: Adding dynamic animations to create an engaging user experience. Used in index.html page AKA the welcome page! 
+- **GIT**: Version control for streamlined project development. Helped pusb the web-repisitory to github. 
+- **CAPCUT**: Audio Editing Tool. Used to edit both the video of using visiting local competitors and the welcome audio. (used to add layered audio (music) and add text to videos).
 
 ### Languages and Frameworks
 - **HTML**: Crafting the structural foundation of the website.
